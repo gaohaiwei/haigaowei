@@ -30,7 +30,7 @@
                    <span id="span_userinfo"> <?php if(session('homeuser')): ?> <a href="<?php echo e(url('home/personal')); ?>"> <?php echo e(session('homeuser')->account); ?></a>·<a id="user_nav_blog_link" href="<?php echo e(url('home/detail')); ?>">我的博客</a>·<a href="/home/logout">退出</a> <?php else: ?> [<a href="<?php echo e(URL('home/login')); ?>"> 登陆 </a>·<a href="<?php echo e(url('home/register')); ?>">注册</a>]</span><?php endif; ?>
 
 
-                *</div>4
+                </div>
                 
                 <div class="clear"></div>
                 

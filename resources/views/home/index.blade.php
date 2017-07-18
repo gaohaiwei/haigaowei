@@ -30,7 +30,7 @@
                    <span id="span_userinfo"> @if(session('homeuser')) <a href="{{url('home/personal')}}"> {{session('homeuser')->account}}</a>·<a id="user_nav_blog_link" href="{{url('home/detail')}}">我的博客</a>·<a href="/home/logout">退出</a> @else [<a href="{{URL('home/login')}}"> 登陆 </a>·<a href="{{url('home/register')}}">注册</a>]</span>@endif
 
 
-                *</div>4
+                </div>
                 
                 <div class="clear"></div>
                 
