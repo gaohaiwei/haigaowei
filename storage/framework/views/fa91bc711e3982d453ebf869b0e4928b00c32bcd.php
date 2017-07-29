@@ -1,8 +1,8 @@
-;
+  ;
 
 
   <?php $__env->startSection('content'); ?>
-  		<?php echo $__env->make('vendor.ueditor.assets', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+  <?php echo $__env->make('vendor.ueditor.assets', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 		<form method="post" action="<?php echo e(URL('home/detail/store')); ?>" id="frmMain">
 		<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
 
@@ -26,13 +26,8 @@
 											<br>
 											<input name="author" type="text" maxlength="200" id="Editor_Edit_txbTitle" onblur="localPreserver.saveDraftTitle();" onkeydown="title_keydown(event);" style="width:99%;">
 										</div>
-										<div id="edit_title">
-											<b>文章摘要</b>            
-											<br>
-											<input name="abstract" type="text" maxlength="200" id="Editor_Edit_txbTitle" onblur="localPreserver.saveDraftTitle();" onkeydown="title_keydown(event);" style="width:99%;">
-										</div>
 									
-													<!-- 实例化编辑器 -->
+										<!-- 实例化编辑器 -->
 									    <script type="text/javascript">
 									        var ue = UE.getEditor('container');
 									        ue.ready(function() {

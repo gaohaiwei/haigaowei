@@ -19,7 +19,8 @@ class IndexController extends Controller
     public function index()
     {         
 		//$art = Article::where('status', 1)->get();
-		 $art = Article::where('status', 1)->get();
+        $art = Article::where('status', 1)->orderBy("id",'desc')->paginate(2);
+		 //$art = Article::where('status', 1)->get();
         //dd($art);
         foreach($art as $k=>$v){
             $art[$k]->content = Contents::where("id",$v->cid)->first()->content;

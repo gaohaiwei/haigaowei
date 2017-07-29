@@ -30,7 +30,9 @@
                    <span id="span_userinfo"> @if(session('homeuser')) <a href="{{url('home/personal')}}"> {{session('homeuser')->account}}</a>·<a id="user_nav_blog_link" href="{{url('home/detail')}}">我的博客</a>·<a href="/home/logout">退出</a> @else [<a href="{{URL('home/login')}}"> 登陆 </a>·<a href="{{url('home/register')}}">注册</a>]</span>@endif
 
 
+
                 </div>
+
                 
                 <div class="clear"></div>
                 
@@ -92,11 +94,9 @@
 </div>    
  
 <div class="post_item_body">
-	<h3><a class="titlelnk" href="" target="_blank">标题:{{$v->title}}</a></h3>    
+	<h3><a class="titlelnk" href="{{URL('/home/details')}}/{{$v->id}}" target="_blank">{{$v->title}}</a></h3>    
         <p class="post_item_summary">
-            <a href="http://www.cnblogs.com/sunsky303/" target="_blank">
-                <img width="48" height="48" class="pfs" src="{{url('images/20170329141435.png')}}" alt="">
-               </a> 
+           
 			   <?php echo mb_substr(htmlspecialchars_decode($v['content']),0,500,"utf-8");?>
 			  
         </p>              
@@ -107,7 +107,7 @@
             
     
         <span class="article_comment"> 
-        <a href="{{url('/home/details')}}/{{$v->id}}" title="" class="gray">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;详情</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="{{URL('/home/details')}}/{{$v->id}}" title="" class="gray">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;详情</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </span><span class="article_view"> 
         <a href="" class="gray"></a></span>
         </div>

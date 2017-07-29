@@ -5,7 +5,7 @@
 <meta content="initial-scale=1, minimum-scale=1, user-scalable=no, maximum-scale=1, width=device-width" name="viewport">
 <link rel="shortcut icon" href="http://blog.enqoo.com/wp-content/themes/enqooblog2014/favicon.ico"> 
 <link rel="pingback" href="http://blog.enqoo.com/xmlrpc.php">
-<link rel="pingback" href=<?php echo e(asset('liebiao/main.266c1c.css')); ?>>
+<link rel="pingback" href="<?php echo e(asset('liebiao/main.266c1c.css')); ?>">
 <title>
 </title>
 
@@ -56,12 +56,21 @@ var CrayonSyntaxStrings = {"copy":"\u4f7f\u7528 %s \u590d\u5236\uff0c\u4f7f\u752
             <div class="eq-row">
                 <div id="logo">
                     <!-- blog标题 -->
-                    <a href="http://blog.enqoo.com/">
+                    <a href="<?php echo e(url('home')); ?>">
                         <img src="<?php echo e(asset('liebiao/adminlogo.gif')); ?>" >
                     </a>
                     <!-- blog描述
                     网站设计 |  Photoshop 教程  | 设计技巧 -->
+                    <br/>
+
                 </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="<?php echo e(url('home/personal')); ?>" target="_blank">个人中心</a>
+                    <br/><br/>
+                
+                                  
                 
                 <div class="nav">
                     <a href="http://blog.enqoo.com/#" id="pull"></a><!-- 响应式导航 -->
@@ -73,6 +82,7 @@ var CrayonSyntaxStrings = {"copy":"\u4f7f\u7528 %s \u590d\u5236\uff0c\u4f7f\u752
                         </ul>
                     
                 </div>
+                <div></div>
                 <form role="search" method="get" id="searchform" action="http://blog.enqoo.com/">
         <input type="search" placeholder="搜索..." value="" name="s" id="search">
         <input type="submit" id="searchsubmit" value="搜索">
@@ -87,54 +97,63 @@ var CrayonSyntaxStrings = {"copy":"\u4f7f\u7528 %s \u590d\u5236\uff0c\u4f7f\u752
                  
                   
                  
-                          <?php $__currentLoopData = $list; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $v): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                   <?php $__currentLoopData = $art; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $v): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                  
                  
-                                  <div class="post" id="post-15022"><!-- post id 用于定义某篇日志 -->
+                   <div class="post" id="post-15022"><!-- post id 用于定义某篇日志 -->
                      
-                     <h1><a href="http://blog.enqoo.com/blog/2016/04/26/beautiful-vintage-design-showcase-and-resources/" title="优雅的复古设计：灵感展示及资源"><?php echo e($v->title); ?></a></h1> <!-- 如果有博客，输出日志标题 -->
+                     <h1><a href="<?php echo e(url('/home/details')); ?>/<?php echo e($v->id); ?>" title="优雅的复古设计：灵感展示及资源"><?php echo e($v->title); ?></a></h1> <!-- 如果有博客，输出日志标题 -->
                      
                      <ul class="postmeta clearfix">
-                         <li class="date">04/26/2016</li>
-                         <li class="category"><a href="http://blog.enqoo.com/blog/category/cool-site/" rel="category tag">灵感酷站</a>, <a href="http://blog.enqoo.com/blog/category/design-resource/" rel="category tag">设计资源</a></li>
-                         <li class="comments"><a href="<?php echo e(URL('home/details')); ?>">1 评论</a></li>
+                        <li><?php echo e($v->author); ?></li>
+                         <li class="date"><?php echo e($v->addtime); ?></li>
+                         <li class="category"> </li>
                          <li></li>
-                     </ul><!-- postmeta end-->
-                     
-                     <div class="entry">
-                     <p><?php echo e($v->author); ?>
 
-<p><img src="<?php echo e(asset('liebiao/1-11.jpg')); ?>" alt="1" width="600" height="285"  sizes="(max-width: 600px) 100vw, 600px"></p>
-<p>&nbsp;</p>
-<h3> <a href="<?php echo e(url('/home/details')); ?>/<?php echo e($v->id); ?>" class="more-link">阅读全文…</a></h3>
-<!-- 输出日志内容 -->
-                        
+                     </ul><!-- postmeta end-->
+                      
+                     <div class="entry">
+                    
+                    <p><?php echo mb_substr(htmlspecialchars_decode($v['content']),0,300,"utf-8");?></p>
+                        <p>&nbsp;</p>
+                        <h3> <a href="<?php echo e(url('/home/details')); ?>/<?php echo e($v->id); ?>" class="more-link">阅读全文…</a></h3>
+                        <!-- 输出日志内容 -->
+              
+
                      </div>
                      
                      <div class="tags clearfix">
-                           <a href="http://blog.enqoo.com/blog/tag/%e7%95%8c%e9%9d%a2%e8%ae%be%e8%ae%a1/" rel="tag">界面设计</a>, <a href="http://blog.enqoo.com/blog/tag/web%e8%ae%be%e8%ae%a1/" rel="tag">网页设计</a>, <a href="http://blog.enqoo.com/blog/tag/%e8%ae%be%e8%ae%a1%e7%81%b5%e6%84%9f/" rel="tag">设计灵感</a> 
+                           
                      </div>
                      
                  </div><!-- post end -->
                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                  
-                 <div class="pagination">
-                    <a href="http://blog.enqoo.com/" class="current">1</a><a href="http://blog.enqoo.com/page/2/">2</a><a href="http://blog.enqoo.com/page/3/">3</a><a href="http://blog.enqoo.com/page/4/">4</a><a href="http://blog.enqoo.com/page/5/">5</a><a href="http://blog.enqoo.com/page/2/"> 下一页 </a><a href="http://blog.enqoo.com/page/81/" class="extend" title="跳转到最后一页"> 最后一页 </a>                 </div>
+             
+                    
+                   <!--  <div class="pagination">
+                    <a href='http://blog.enqoo.com/' class='current'>1</a><a href='http://blog.enqoo.com/page/2/'>2</a><a href='http://blog.enqoo.com/page/3/'>3</a><a href='http://blog.enqoo.com/page/4/'>4</a><a href='http://blog.enqoo.com/page/5/'>5</a><a href="http://blog.enqoo.com/page/2/" > 下一页 </a><a href='http://blog.enqoo.com/page/81/' class='extend' title='跳转到最后一页'> 最后一页 </a>                 </div>   -->        
+
+
+                    <div class="btn-group" role="group" aria-label="...">
+                    <?php echo e($art->links()); ?>  
+                    </div>
                  
-                                 </div><!-- mainContent end -->
+            </div><!-- mainContent end -->
              </div><!-- eq-g4x3 end -->
              
-                 <div class="eq-g4">
-    <div class="sidebar">
-    <ul>
-        <li id="text-2" class="widget widget_text">			<div class="textwidget"><div class="sidebar-banner">
+                <div class="eq-g4">
+                <div class="sidebar">
+                <ul>
+                    <li id="text-2" class="widget widget_text">			
+                    <div class="textwidget"><div class="sidebar-banner">
 
-</div></div>
-		</li>
+                </div>
+                </div>
+            		</li>
 
-    </ul>
-    </div><!-- sidebar end -->
-</div>             
+                </ul>
+                </div><!-- sidebar end -->
+            </div>             
          </div><!-- eq-row end -->
          <footer>
 Copyright © 2017  <a href="http://www.enqoo.com/" target="_blank">Enqoo Inc.</a> All Rights Reserved.

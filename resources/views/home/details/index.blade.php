@@ -39,21 +39,21 @@
 	<div class="forFlow">		
 <div id="post_detail">
 <!--done-->
+@foreach($art as $ve)	
 <div id="topics">
 	<div class="post">
 		<h1 class="postTitle">
-			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/f-ck-need-u/p/7100336.html">Linux开机详细流程</a>
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/f-ck-need-u/p/7100336.html">{{$ve->title}}</a>
 		</h1>
 		<div class="clear"></div>
 		<div class="postBody">
 			<div id="cnblogs_post_body">
-@foreach($art as $ve)	
-标题:{{$ve->title}}<br/>	
+
 作者:{{$ve->author}}<br/>
 发布于:{{$ve->addtime}}<br/>
 @endforeach
 @foreach($ar as $v)
-内容:{{$v->content}}
+内容:<?php echo (htmlspecialchars_decode($v['content']));?>
 @endforeach	
 <div id="EntryTag"></div>
 <div id="blog_post_info"><div id="green_channel">

@@ -30,7 +30,9 @@
                    <span id="span_userinfo"> <?php if(session('homeuser')): ?> <a href="<?php echo e(url('home/personal')); ?>"> <?php echo e(session('homeuser')->account); ?></a>·<a id="user_nav_blog_link" href="<?php echo e(url('home/detail')); ?>">我的博客</a>·<a href="/home/logout">退出</a> <?php else: ?> [<a href="<?php echo e(URL('home/login')); ?>"> 登陆 </a>·<a href="<?php echo e(url('home/register')); ?>">注册</a>]</span><?php endif; ?>
 
 
+
                 </div>
+
                 
                 <div class="clear"></div>
                 
@@ -92,11 +94,9 @@
 </div>    
  
 <div class="post_item_body">
-	<h3><a class="titlelnk" href="" target="_blank">标题:<?php echo e($v->title); ?></a></h3>    
+	<h3><a class="titlelnk" href="<?php echo e(URL('/home/details')); ?>/<?php echo e($v->id); ?>" target="_blank"><?php echo e($v->title); ?></a></h3>    
         <p class="post_item_summary">
-            <a href="http://www.cnblogs.com/sunsky303/" target="_blank">
-                <img width="48" height="48" class="pfs" src="<?php echo e(url('images/20170329141435.png')); ?>" alt="">
-               </a> 
+           
 			   <?php echo mb_substr(htmlspecialchars_decode($v['content']),0,500,"utf-8");?>
 			  
         </p>              
@@ -108,7 +108,7 @@
             
     
         <span class="article_comment"> 
-        <a href="<?php echo e(url('/home/details')); ?>/<?php echo e($v->id); ?>" title="" class="gray">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;详情</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="<?php echo e(URL('/home/details')); ?>/<?php echo e($v->id); ?>" title="" class="gray">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;详情</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </span><span class="article_view"> 
         <a href="" class="gray"></a></span>
         </div>
